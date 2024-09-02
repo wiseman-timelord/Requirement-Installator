@@ -2,7 +2,7 @@
 Its currently the, latest and best, version of my `Setup-Install.Bat`, made to work on any requirements.txt.
 
 ### DESCRIPTION:
-- I dont have endless amounts of hard-drive space, with the models and my games, and my videos, it becomes a juggling act, so you better believe I am not using environments for python, endless mirrors of already installed packaged, some individually 2.5GB, hence, I try and spread my applications across versions of python, and hope they dont break each other too much, like normal poor people do, well, like I do, and I'm sure there are many like me. Thus, here is a Universal Setup-Install, that will install requirements at the click of a button, for any python application. 
+- I dont have endless amounts of hard-drive space, with the models and my games, and my videos, it becomes a juggling act, so you better believe I am not using environments for python, endless mirrors of already installed packaged, some individually 2.5GB, hence, I try and spread my applications across versions of python, and hope they dont break each other too much, like normal poor people do, well, like I do, and I'm sure there are many like me, or try to be as awesome as me, and may copy me in all kinds of ways, being the inspiring person I am, *ahem*, thus, here is a Universal Setup-Install, that will install requirements at the click of a button, for any python application. 
 
 ### Install And Use:
 1. Download and unpack to the same Directory as the `requirements.txt`.
