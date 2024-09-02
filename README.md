@@ -145,3 +145,6 @@ Press any key to continue . . .
 3. Run `Setup-Install.Bat`, and take a look at the output, it will show if there are any issues, but regardless of issues, just ignore the `Verifying installation...` section for now, and try running the Program you were installing requirements for.
 4. If there are problems running the program that  `requirements.txt` relates to you should definately run `Setup-Install` again, and ensure to check the `Verifying installation...` section, and determine if any of those dependencies are required for the application to work, mainly involves going up and down the lists, and typing a few, `"drive:\path\pip.exe" uninstall packagename` and `"drive:\path\pip.exe" install packagename==#.##`, types of commands.
 - Ensure you ignore any dependency compatibility issues, if they are not for the SPECIFIC VERSION of the SPECIFIC, PROGRAMS AND LIBRARIES, that you are using.  
+
+## DISCLAIMER
+This software is subject to the terms in License.Txt, covering usage, distribution, and modifications. For full details on your rights and obligations, refer to License.Txt.
