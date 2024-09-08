@@ -3,9 +3,17 @@
 setlocal EnableDelayedExpansion
 
 :: Persistence Variables
-set "PYTHON_VERSION_NODECIMAL=310"
-set "PIP_EXE_TO_USE="
+set "PYTHON_VERSION_NODECIMAL=311"
 set "PYTHON_EXE_TO_USE="
+set "SCRIPT_DIRECTORY_PATH="
+
+:: Initialize Display
+cls
+echo ========================================================================================================================
+echo     Install-Setup
+echo ========================================================================================================================
+echo.
+timeout /t 1 >nul
 
 :: ADMIN AND DP0, BLOCK, DO NOT MODIFY: START
 net session >nul 2>&1 || (
@@ -13,44 +21,38 @@ net session >nul 2>&1 || (
     timeout /t 3 >nul
     exit /b 1
 )
-set "Script_Directory=%~dp0"
-set "Script_Directory=%Script_Directory:~0,-1%"
-pushd "%Script_Directory%"
-:: ...ADMIN AND DP0, BLOCK, DO NOT MODIFY: END
-
-cls
-echo ========================================================================================================================
-echo                                                      Setup-Installer
-echo ========================================================================================================================
-echo.
-echo Admin Status: Administrator 
-echo Working Folder: %Script_Directory%
+echo Status: Administrator
 timeout /t 1 >nul
+set "SCRIPT_DIRECTORY_PATH=%~dp0"
+set "SCRIPT_DIRECTORY_PATH=%SCRIPT_DIRECTORY_PATH:~0,-1%"
+pushd "%SCRIPT_DIRECTORY_PATH%"
+echo Working Folder: %SCRIPT_DIRECTORY_PATH%
+timeout /t 1 >nul
+:: ...ADMIN AND DP0, BLOCK, DO NOT MODIFY: END
 
 :: FIND PYTHON BLOCK, DO NOT MODIFY: START
 for %%I in (
-    "C:\Python%PYTHON_VERSION_NODECIMAL%\python.exe"
     "C:\Program Files\Python%PYTHON_VERSION_NODECIMAL%\python.exe"
-    "%LocalAppData%\Programs\Python\Python%PYTHON_VERSION_NODECIMAL%\python.exe"
+    "C:\Users\%USERNAME%\AppData\Local\Programs\Python\Python%PYTHON_VERSION_NODECIMAL%\python.exe"
 ) do (
     if exist "%%~I" (
-        set "PYTHON_EXE_TO_USE=%%~dpI\python.exe"
-        set "PIP_EXE_TO_USE=%%~dpI\Scripts\pip.exe"
-        goto :found_python
+        set "PYTHON_EXE_TO_USE=%%~I"
+        goto :found_python_version
     )
 )
-echo Error: Python %PYTHON_VERSION_NODECIMAL% not found. Please install Python %PYTHON_VERSION_NODECIMAL%.
-goto :end_of_file
-:found_python
-echo Python %PYTHON_VERSION_NODECIMAL% found.
-echo Using `python.exe` from: %PYTHON_EXE_TO_USE%
-echo Using `pip.exe` from: %PIP_EXE_TO_USE%
-echo.
+:found_python_version
+if not defined PYTHON_EXE_TO_USE (
+    echo Error: Python %PYTHON_VERSION_NODECIMAL% not found. Please install it before running this script.
+    timeout /t 3 >nul
+    goto :end_of_script
+)
+echo Python %PYTHON_VERSION_NODECIMAL% Found
+timeout /t 1 >nul
 :: FIND PYTHON BLOCK, DO NOT MODIFY: END
 
 :: Ensure setuptools and wheel are correctly installed
 echo Ensuring setuptools and wheel are properly installed...
-"%PIP_EXE_TO_USE%" install --upgrade --force-reinstall setuptools wheel
+"%PYTHON_EXE_TO_USE%" -m pip install --upgrade --force-reinstall setuptools wheel
 if errorlevel 1 (
     echo Failed to reinstall setuptools and wheel. Carrying On...
 )
@@ -59,11 +61,11 @@ echo.
 
 :: Install requirements and verify Install.
 echo Installing Requirements...
-"%PIP_EXE_TO_USE%" install -r requirements.txt
+"%PYTHON_EXE_TO_USE%" -m pip install -r requirements.txt
 echo Processed: `requirements.txt`
 echo.
 echo Verifying installation...
-"%PIP_EXE_TO_USE%" check
+"%PPYTHON_EXE_TO_USE%" -m pip check
 if errorlevel 1 (
     echo Warning: Some conflicts may still exist. Please review the output above.
 ) else (
@@ -72,7 +74,6 @@ if errorlevel 1 (
 echo.
 
 :end_of_file
-echo ========================================================================================================================
-echo All processes finished.
+echo ...All processes finished.
 pause
 exit /b
