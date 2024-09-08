@@ -14,6 +14,7 @@ Its currently the, latest and best, version of my `Setup-Install.Bat`, made to w
 Status: Administrator
 Working Folder: D:\ProgsOthers\Agent-Zero\agent-zero-0.6.2
 Python 311 Found
+
 Ensuring setuptools and wheel are properly installed...
 Collecting setuptools
   Using cached setuptools-74.1.2-py3-none-any.whl.metadata (6.7 kB)
