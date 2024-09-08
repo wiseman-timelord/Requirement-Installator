@@ -13,7 +13,7 @@ Its currently the, latest and best, version of my `Setup-Install.Bat`, made to w
 
 Status: Administrator
 Working Folder: D:\ProgsOthers\Agent-Zero\agent-zero-0.6.2
-Python 311 Found
+Found Python: C:\Users\Mastar\AppData\Local\Programs\Python\Python311\python.exe
 
 Ensuring setuptools and wheel are properly installed...
 Collecting setuptools
