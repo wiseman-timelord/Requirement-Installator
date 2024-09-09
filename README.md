@@ -1,8 +1,8 @@
 # Universal-Requirements-Installer
-Its currently the, latest and best, version of my `Setup-Install.Bat`, made to work on any requirements.txt.
+Status: Working
 
 ### DESCRIPTION:
-- I dont have endless amounts of hard-drive space, with the, models and games and videos, it becomes a juggling act, so you better believe I am not using environments for python, endless mirrors of already installed packaged, some individually 2.5GB, hence, I try and spread my applications across versions of python, and hope they dont break each other or shift them around if they do, like normal poor people do, well, like I do, and I'm sure there are many like me, thus, here is a Universal Setup-Install, that will install requirements at the click of a button, for any python application that has a `requirements.txt`. 
+An adapded version of a late stage of one of my `Setup-Install.Bat`, made to work on any `requirements.txt`. I dont have endless amounts of hard-drive space, with the, models and games and videos, it becomes a juggling act, so you better believe I am not using environments for python, endless mirrors of already installed packaged, some individually 2.5GB, hence, I try and spread my applications across versions of python, and hope they dont break each other or shift them around if they do, like normal poor people do, well, like I do, and I'm sure there are many like me, thus, here is a Universal Setup-Install, that will install requirements at the click of a button, for any python application that has a `requirements.txt`. 
 
 ### PREVIEW:
 - `Universal-Requirements-Installer.Bat` in action...
