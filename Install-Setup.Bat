@@ -46,9 +46,10 @@ if not defined PYTHON_EXE_TO_USE (
     timeout /t 3 >nul
     goto :end_of_script
 )
-echo Python %PYTHON_VERSION_NODECIMAL% Found
+echo Found Python: %PYTHON_EXE_TO_USE%
 timeout /t 1 >nul
 :: FIND PYTHON BLOCK, DO NOT MODIFY: END
+echo.
 
 :: Ensure setuptools and wheel are correctly installed
 echo Ensuring setuptools and wheel are properly installed...
