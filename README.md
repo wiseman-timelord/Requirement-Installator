@@ -1,14 +1,14 @@
-# Requirements-Installator
+# Requirement-Installator
 Status: Working
 
 ### DESCRIPTION:
 An adapded version of a late stage of one of my `Install-Setup.Bat`, made to install requirements at the click of a button, for any python application that has a `requirements.txt`. I dont have endless amounts of hard-drive space, with the, models and games and videos, it becomes a juggling act, so you better believe I am not using environments for python, endless mirrors of already installed packaged, some individually 2.5GB, hence, the individual python version is the environment, and I try and spread my applications across versions of python, and hope they dont break each other, or if they do then shift the apps to diff versions of python; thats the kind of use expected here.
 
 ### PREVIEW:
-- `Universal-Requirements-Installer.Bat` in action...
+- `Requirement-Installator.Bat` in action...
 ```
 ========================================================================================================================
-    Requirements-Installator
+    Requirement-Installator
 ========================================================================================================================
 
 Status: Administrator
@@ -41,8 +41,8 @@ Press any key to continue . . .
 ## Install And Use:
 1. Download and unpack to the same Directory as the `requirements.txt`, that you intend to install with pip.
 2. Edit this line `set "PYTHON_VERSION_NODECIMAL=310"` to have the version relevant to the program the `requirements.txt` relates to (eg. 311 for version 3.11).
-3. Run `Requirements-Installator.Bat`, and take a look at the output, it will show if there are any issues, but regardless of issues, just ignore the `Verifying installation...` section for now, and try running the Program you were installing requirements for.
-4. If there are problems running the program that  `requirements.txt` relates to you should definately run `Requirements-Installator` again, and ensure to check the `Verifying installation...` section, and determine if any of those dependencies are required for the application to work, and refer to online information regarding dependency issues.
+3. Run `Requirement-Installator.Bat`, and take a look at the output, it will show if there are any issues, but regardless of issues, just ignore the `Verifying installation...` section for now, and try running the Program you were installing requirements for.
+4. If there are problems running the program that  `requirements.txt` relates to you should definately run `Requirement-Installator` again, and ensure to check the `Verifying installation...` section, and determine if any of those dependencies are required for the application to work, and refer to online information regarding dependency issues.
 
 ### Notation:
 - Ensure you ignore any dependency compatibility issues, if they are not for the SPECIFIC VERSION of the SPECIFIC, PROGRAMS AND LIBRARIES, that you are trying to use currently. 
